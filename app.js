@@ -36,8 +36,12 @@ app.get('/add_post',(req,res) => {
   res.render('add_post')
 })
 
-app.get('/post',(req,res) => {
-  res.render('post')
+app.get('/post/:id', async(req,res) => {
+  
+  const post = await Clean.findById(req.params.id);
+ res.render('post', {
+ post
+   })
 })
 
 app.post('/clean', async(req,res) => {
@@ -50,4 +54,5 @@ const port = 8000;
 app.listen(port, () => {
   console.log(`${port}  numaralı porta bağlandın`);
 });
+
 
