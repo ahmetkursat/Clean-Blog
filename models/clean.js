@@ -7,6 +7,7 @@ const CleanSchema = new Schema({
     title:String,
     subtitle:String,
     content:String,
+    blocknot:String,
     datecreated:{
         type:Date,
         default:Date.now  

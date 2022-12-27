@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="page-heading">
-            <h1>Add New Post</h1>
+            <h1>Edit Post</h1>
 
           </div>
         </div>
@@ -23,38 +23,18 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <form novalidate method="POST" action="/clean">
+        <form  class="tm-contact-form" method="POST" action="/edit/<%- clean._id -%>?_method=PUT"  encType="multipart/form-data" >
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Post Title</label>
-              <input type="text" class="form-control" placeholder="yazar ısmı" id="author" name="author" required data-validation-required-message="Please enter your name.">
-              <p class="help-block text-danger"></p>
-            </div>
-          </div>
-          <div class="control-group">
-            <div class="form-group floating-label-form-group controls">
-              <label>Post Title</label>
-              <input type="text" class="form-control" placeholder="konu adı" id="title" name="title" required data-validation-required-message="Please enter your name.">
-              <p class="help-block text-danger"></p>
-            </div>
-          </div><div class="control-group">
-            <div class="form-group floating-label-form-group controls">
-              <label>Post Title</label>
-              <input type="text" class="form-control" placeholder="Tablo Baslıgı" id="subtitle" name="subtitle" required data-validation-required-message="Please enter your name.">
+              <input type="text" class="form-control" placeholder="Başlık" name="subtitle" value="<%- clean.subtitle -%>" required data-validation-required-message="Please enter your name.">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Post Detail</label>
-              <textarea rows="5" class="form-control" placeholder="Tablo yazısı" id="content" name="content" required data-validation-required-message="Please enter a message."></textarea>
-              <p class="help-block text-danger"></p>
-            </div>
-          </div>
-          <div class="control-group">
-            <div class="form-group floating-label-form-group controls">
-              <label>Post Detail</label>
-              <textarea rows="5" class="form-control" placeholder="Tablo yazısı"  name="blocknot" required data-validation-required-message="Please enter a message."></textarea>
+              <textarea rows="5" class="form-control" placeholder="Yazı"  name="content" required data-validation-required-message="Please enter a message."><%- clean.content -%></textarea>
               <p class="help-block text-danger"></p>
             </div>
           </div>
